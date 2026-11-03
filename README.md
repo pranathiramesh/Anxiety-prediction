@@ -34,9 +34,14 @@ anxiety-prediction/
 python -m venv .venv && source .venv/bin/activate     # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 
-python run_all.py                  # EDA + regression + classification
+# Train the model (required once; trained models are not stored in the repo)
+python -m anxiety.train_regression
+
+# Launch the app
 streamlit run app/streamlit_app.py
 ```
+
+To also run the EDA and the classifier, use `python run_all.py` instead of the training line.
 
 Run steps individually:
 
